@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="header__container">
+        <img
+          src="https://cdn.icon-icons.com/icons2/1951/PNG/512/16_122653.png"
+          alt="logo-image"
+          class="header__logo-image"
+        />
+        <h1 class="header__logo-text">todo</h1>
+      </div>
+      <div class="theme-toggle">
+        <button class="theme-toggle-button"></button>
+      </div>
+    </header>
+    <main class="main">
+      <section class="task-section">
+        <div class="container">
+          <form class="task-form">
+            <input
+              type="text"
+              class="task-form__task-text"
+              placeholder="Enter task text..."
+              maxlength="150"
+            />
+            <button type="submit" class="task-form__submit-butt submit-butt">
+              Add +
+            </button>
+          </form>
+        </div>
+      </section>
+      <section class="task-status-section">
+        <div class="container">
+          <div class="task-status-section__butt-container">
+            <div class="task-filter active">
+              <button data-status-directory="all" class="task-filter-button">
+                All
+              </button>
+              <div class="task-count all-count">0</div>
+            </div>
+            <div class="task-filter">
+              <button data-status-directory="now" class="task-filter-button">
+                Now
+              </button>
+              <div class="task-count now-count">0</div>
+            </div>
+            <div class="task-filter">
+              <button data-status-directory="ends" class="task-filter-button">
+                Ends
+              </button>
+              <div class="task-count ends-count">0</div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="tasks-section">
+        <h2 class="tasks-section__empty-message">No tasks available!</h2>
+        <ul class="list-tasks"></ul>
+      </section>
+    </main>
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>
