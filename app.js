@@ -3,14 +3,14 @@ import {
   containerTask,
   filtredButt,
 } from "./constant/constant.js";
-import { tasksObservable } from "./utility/createObservable.js";
-import "./utility/switchTheme.js";
-import "./taskFeautures/addFormTask.js";
-import { renderCards } from "./utility/renderCards.js";
-import { updateTasksCards } from "./taskFeautures/updateTaskCards.js";
+import "./utils/switchTheme.js";
+import "./task-utils/addTaskForm.js";
+import { renderCards } from "./utils/renderCards.js";
+import { updateTasksCards } from "./task-utils/updateTaskCard.js";
+import { store } from "./utils/createStore.js";
 
 // Подписка на обновления задач
-tasksObservable.subscribe(updateTasksCards);
+store.subscribe(updateTasksCards);
 
 //первый рендер
 renderCards();
@@ -23,7 +23,7 @@ containerTask.addEventListener("click", (e) => {
     const taskId = Number(card.dataset.id);
 
     //вызываем метод для удаления задачи
-    tasksObservable.deleteTask(taskId);
+    store.deleteTask(taskId);
   }
 });
 
@@ -35,7 +35,7 @@ containerTask.addEventListener("change", (e) => {
     const taskId = Number(card.dataset.id);
 
     // Вызываем метод для смены статуса задачи
-    tasksObservable.changeActiveTask(taskId);
+    store.changeActiveTask(taskId);
   }
 });
 
@@ -54,7 +54,7 @@ buttContainer.addEventListener("click", (e) => {
     }
 
     //меняем директорию глобально
-    tasksObservable.setDirectory(clickedButt.dataset.statusDirectory);
+    store.setDirectory(clickedButt.dataset.statusDirectory);
 
     //ререндерим все карточки при смене директории
     renderCards();

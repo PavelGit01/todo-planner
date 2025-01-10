@@ -1,26 +1,21 @@
-  //создаем класс для карточки задачи
 export class CardTask {
   constructor({ text, isActive, id }) {
-    (this.text = text), (this.isActive = isActive), (this.id = id);
+    this.text = text, 
+    this.isActive = isActive, 
+    this.id = id;
   }
 
-  //метод для создания задачи
   create() {
-    //создаем элемент в котором будет вся таска
     const cardTask = document.createElement("li");
 
-    //добавляем уникальный атрибут data-id который равен нашему id
     cardTask.dataset.id = this.id;
 
-    //добавляем ему класс
     cardTask.classList.add("task-card");
 
-    //если при рендере состояние задачи 'выполнена' то добавляем класс
     if (this.isActive) {
       cardTask.classList.add("active");
     }
 
-    //Создаем саму задачу
     cardTask.innerHTML = `
       <p class="task-card__description">${this.text}</p>
   <div class='task-card__feautures'>  
@@ -46,10 +41,8 @@ export class CardTask {
   </div>
   `;
 
-    //находим чекбокс в карточке
     const checkbox = cardTask.querySelector(".task-card__check-active");
 
-    //устанавливаем его значение в текущий isActive(по дефолту false)
     checkbox.checked = this.isActive;
 
     return cardTask;
