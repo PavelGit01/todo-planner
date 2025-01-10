@@ -4,9 +4,9 @@ import {
   filtredButt,
 } from "./constant/constant.js";
 import "./utils/switchTheme.js";
-import "./task-utils/addTaskForm.js";
+import "./tasks-utils/addTaskForm.js";
 import { renderCards } from "./utils/renderCards.js";
-import { updateTasksCards } from "./task-utils/updateTaskCard.js";
+import { updateTasksCards } from "./tasks-utils/updateListTasks.js";
 import { store } from "./utils/createStore.js";
 
 // Подписка на обновления задач

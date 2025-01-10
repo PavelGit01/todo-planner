@@ -5,7 +5,7 @@ import {
   counterTasks,
   toggleEmptyMessage,
   updateTaskInDirectory,
-} from "./taskHelpers.js";
+} from "./tasksHelpers.js";
 
 export const updateTaskCards = (allTasks, action, id = null) => {
   const card = containerTask.querySelector(`[data-id='${id}']`);

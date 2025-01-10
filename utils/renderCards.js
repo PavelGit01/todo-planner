@@ -2,7 +2,7 @@ import { containerTask } from "../constant/constant.js";
 import { counterTasks } from "./counterTasks.js";
 import { toggleEmptyMessage } from "./emptyTasksMessage.js";
 import { store } from "./createStore.js";
-import { filterTasks } from "../task-utils/taskHelpers.js";
+import { filterTasks } from "../tasks-utils/tasksHelpers.js";
 
 export const renderCards = () => {
   const allTasks = store.getState();
@@ -53,3 +53,7 @@ export const renderCards = () => {
 
   toggleEmptyMessage(filtredTasks);
 };
+
+
+// https://pavelgit01.github.io/todo-planner/
+// https://github.com/PavelGit01/todo-planner.git
